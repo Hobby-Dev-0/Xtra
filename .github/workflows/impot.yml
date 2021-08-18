@@ -20,9 +20,9 @@ jobs:
 
         with:
 
-          find: "friday"
+          find: "Friday"
 
-          replace: "speedo"
+          replace: "Speedo"
 
       - name: Create Pull Request
 
