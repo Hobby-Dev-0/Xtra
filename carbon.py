@@ -1,6 +1,6 @@
 # Copyright (C) 2020-2021 by DevsExpo@Github, < https://github.com/DevsExpo >.
 #
-# This file is part of < https://github.com/DevsExpo/FridayUserBot > project,
+# This file is part of < https://github.com/DevsExpo/SpeedoUserBot > project,
 # and is released under the "GNU v3.0 License Agreement".
 # Please see < https://github.com/DevsExpo/blob/master/LICENSE >
 #
@@ -85,5 +85,5 @@ async def karb(client, message):
         await e_.edit(f"[Selenium] - [Chrome - Driver] - [Carbon] >> {e}")
         return driver.quit()
     driver.quit()
-    await reply_.reply_photo(carbon_file, caption=f"<b>Code Carbonized Using Friday</b> \n<b>Style Used :</b> <code>{value_}</code>")
+    await reply_.reply_photo(carbon_file, caption=f"<b>Code Carbonized Using Speedo</b> \n<b>Style Used :</b> <code>{value_}</code>")
     await e_.delete()

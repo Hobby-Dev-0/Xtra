@@ -1,5 +1,5 @@
-# Xtra-Plugins - FridayUB ✨
-> A Repo That Contains Many X-Tra Plugins From FridayDevs And Third Parties.
+# Xtra-Plugins - SpeedoUB ✨
+> A Repo That Contains Many X-Tra Plugins From SpeedoDevs And Third Parties.
 
 # Example 👊 
 

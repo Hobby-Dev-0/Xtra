@@ -1,6 +1,6 @@
 # Copyright (C) 2020-2021 by DevsExpo@Github, < https://github.com/DevsExpo >.
 #
-# This file is part of < https://github.com/DevsExpo/FridayUserBot > project,
+# This file is part of < https://github.com/DevsExpo/SpeedoUserBot > project,
 # and is released under the "GNU v3.0 License Agreement".
 # Please see < https://github.com/DevsExpo/blob/master/LICENSE >
 #
@@ -10,7 +10,7 @@ from main_startup.core.decorators import speedo_on_cmd
 from main_startup.helper_func.basic_helpers import edit_or_reply, get_text
 import feedparser
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
-from main_startup import Friday
+from main_startup import Speedo
 from xtraplugins.dB.rss_db import (
     add_rss,
     is_get_chat_rss,
@@ -174,7 +174,7 @@ async def check_rss():
              except:
                 pass
              await update_rss(message, link, rss_d.entries[0].link)
-             await Friday.send_message(message, content)
+             await Speedo.send_message(message, content)
              
 
 

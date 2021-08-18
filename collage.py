@@ -1,6 +1,6 @@
 # Copyright (C) 2020-2021 by DevsExpo@Github, < https://github.com/DevsExpo >.
 #
-# This file is part of < https://github.com/DevsExpo/FridayUserBot > project,
+# This file is part of < https://github.com/DevsExpo/SpeedoUserBot > project,
 # and is released under the "GNU v3.0 License Agreement".
 # Please see < https://github.com/DevsExpo/blob/master/LICENSE >
 #
@@ -126,7 +126,7 @@ async def wow_collage(client, message):
         await owo.edit("`How Am I Supposed To Make Collage With One Image?`")
         return
     await owo.edit("`Creating Collage....`")
-    imgpath = await create_s_collage(file_path=file_path, filename="Collage_by_FridayUB.jpg", width=width, stark_h=stark_h)
+    imgpath = await create_s_collage(file_path=file_path, filename="Collage_by_SpeedoUB.jpg", width=width, stark_h=stark_h)
     if not imgpath:
         if os.path.exists(file_path):
             shutil.rmtree(file_path)

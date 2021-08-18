@@ -1,6 +1,6 @@
 # Copyright (C) 2020-2021 by DevsExpo@Github, < https://github.com/DevsExpo >.
 #
-# This file is part of < https://github.com/DevsExpo/FridayUserBot > project,
+# This file is part of < https://github.com/DevsExpo/SpeedoUserBot > project,
 # and is released under the "GNU v3.0 License Agreement".
 # Please see < https://github.com/DevsExpo/blob/master/LICENSE >
 #
@@ -8,7 +8,7 @@
 
 from main_startup.core.decorators import speedo_on_cmd
 import logging
-from main_startup import bot, Friday, Config
+from main_startup import bot, Speedo, Config
 from main_startup.helper_func.basic_helpers import edit_or_reply, get_text
 from xtraplugins.dB.nightmodedb import is_night_chat_in_db, get_all_night_chats, rm_night_chat, add_night_chat
 from pyrogram.types import ChatPermissions
@@ -62,21 +62,21 @@ async def job_close():
         return
     for warner in lol:
         try:
-            await Friday.send_message(
+            await Speedo.send_message(
               int(warner.get("chat_id")), "`12:00 Am, Group Is Closing Till 6 Am. Night Mode Started !` \n**Powered By @FRidayOT**"
             )
-            await Friday.set_chat_permissions(warner.get("chat_id"), ChatPermissions())
-            async for member in Friday.iter_chat_members(warner.get("chat_id")):
+            await Speedo.set_chat_permissions(warner.get("chat_id"), ChatPermissions())
+            async for member in Speedo.iter_chat_members(warner.get("chat_id")):
              if member.user.is_deleted:
                 try:
-                    await Friday.kick_chat_member(warner.get("chat_id"), member.user.id)
+                    await Speedo.kick_chat_member(warner.get("chat_id"), member.user.id)
                 except:
                     pass
         except Exception as e:
             logging.info(str(e))
             ido = warner.get("chat_id")
             try:
-                await Friday.send_message(Config.LOG_GRP, f"[NIGHT MODE]\n\nFailed To Close The Group {ido}.\nError : {e}")
+                await Speedo.send_message(Config.LOG_GRP, f"[NIGHT MODE]\n\nFailed To Close The Group {ido}.\nError : {e}")
             except:
                 logging.info(e)
 
@@ -87,10 +87,10 @@ async def job_open():
         return
     for warner in lol:
         try:
-            await Friday.send_message(
+            await Speedo.send_message(
               int(warner.get("chat_id")), "`06:00 Am, Group Is Opening.`\n**Powered By @FRidayOT**"
             )
-            await Friday.set_chat_permissions(
+            await Speedo.set_chat_permissions(
                         warner.get("chat_id"),
                         ChatPermissions(
                             can_send_messages=True,
@@ -104,7 +104,7 @@ async def job_open():
             logging.info(str(e))
             ido = warner.get("chat_id")
             try:
-                await Friday.send_message(Config.LOG_GRP, f"[NIGHT MODE]\n\nFailed To Open The Group {ido}.\nError : {e}")
+                await Speedo.send_message(Config.LOG_GRP, f"[NIGHT MODE]\n\nFailed To Open The Group {ido}.\nError : {e}")
             except:
                 logging.info(e)
             

@@ -1,6 +1,6 @@
 # Copyright (C) 2020-2021 by DevsExpo@Github, < https://github.com/DevsExpo >.
 #
-# This file is part of < https://github.com/DevsExpo/FridayUserBot > project,
+# This file is part of < https://github.com/DevsExpo/SpeedoUserBot > project,
 # and is released under the "GNU v3.0 License Agreement".
 # Please see < https://github.com/DevsExpo/blob/master/LICENSE >
 #
@@ -25,7 +25,7 @@ async def me_great(client, message):
     maigret_cmd = f"maigret {user_n} -n 150 -a --timeout 15  --pdf"
     await run_cmd(maigret_cmd)
     file_n = f"reports/report_{user_n}.pdf"
-    captio_n = f"OSINT For {user_n} By FridayUB."
+    captio_n = f"OSINT For {user_n} By SpeedoUB."
     if not os.path.exists(file_n):
         await msg_.edit("`Unable To Fetch Data. Maybe This User Likes To Keep A Air Of Mystery!`")
         return

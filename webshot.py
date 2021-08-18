@@ -1,6 +1,6 @@
 # Copyright (C) 2020-2021 by DevsExpo@Github, < https://github.com/DevsExpo >.
 #
-# This file is part of < https://github.com/DevsExpo/FridayUserBot > project,
+# This file is part of < https://github.com/DevsExpo/SpeedoUserBot > project,
 # and is released under the "GNU v3.0 License Agreement".
 # Please see < https://github.com/DevsExpo/blob/master/LICENSE >
 #
@@ -40,7 +40,7 @@ async def download_img(url):
     async with aiohttp.ClientSession() as session:
         async with session.get(url) as resp:
             if resp.status == 200:
-                file_path = f"Webshot_FridayUB.png"
+                file_path = f"Webshot_SpeedoUB.png"
                 f = await aiofiles.open(file_path, mode='wb')
                 await f.write(await resp.read())
                 await f.close()
@@ -67,7 +67,7 @@ async def fetch_webshoot(client, message):
     img_size = humanbytes(os.stat(img_).st_size)
     if not img_:
         return await msg_.edit("<code>Something Isn't Right. Did You Give Me Valid Url?</code>", parse_mode="html")
-    capt_ = f"<b><u>WebShot Captured</b></u> \n<b>URL :</b> <code>{url_}</code> \n<b>SIZE :</b> <code>{img_size}</code> \n\n<b>Powered By FridayUB</b>"
+    capt_ = f"<b><u>WebShot Captured</b></u> \n<b>URL :</b> <code>{url_}</code> \n<b>SIZE :</b> <code>{img_size}</code> \n\n<b>Powered By SpeedoUB</b>"
     if message.reply_to_message:
         await client.send_document(
             message.chat.id,

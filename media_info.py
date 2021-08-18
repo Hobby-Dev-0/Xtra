@@ -12,7 +12,7 @@ import os
 from telegraph import Telegraph
 
 telegraph = Telegraph()
-page_ = telegraph.create_account(short_name="Friday 🇮🇳")
+page_ = telegraph.create_account(short_name="Speedo 🇮🇳")
 
 
 
@@ -36,7 +36,7 @@ async def get_mediainfo(client, message):
     <code>           
     {resul_t}                  
     </code>"""
-    title_of_page = "Media Info By FridayUB."
+    title_of_page = "Media Info By SpeedoUB."
     response = telegraph.create_page(title_of_page, html_content=media_info)
     km = response["path"]
     await m_.edit(f"**MediaInfo Can Be Found** [Here](https://telegra.ph/{km})", disable_web_page_preview=True)

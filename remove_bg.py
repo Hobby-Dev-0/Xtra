@@ -1,6 +1,6 @@
 # Copyright (C) 2020-2021 by DevsExpo@Github, < https://github.com/DevsExpo >.
 #
-# This file is part of < https://github.com/DevsExpo/FridayUserBot > project,
+# This file is part of < https://github.com/DevsExpo/SpeedoUserBot > project,
 # and is released under the "GNU v3.0 License Agreement".
 # Please see < https://github.com/DevsExpo/blob/master/LICENSE >
 #
@@ -76,11 +76,11 @@ async def rmbg(client, message):
         end = datetime.now()
         ms = (end - start).seconds
         await pablo.edit(
-            "Removed image's Background in {} seconds, powered by @FridayOT".format(ms)
+            "Removed image's Background in {} seconds, powered by @SpeedoOT".format(ms)
         )
     else:
         await pablo.edit(
-            "ReMove.BG API returned Errors. Please report to @FridayOT\n`{}".format(
+            "ReMove.BG API returned Errors. Please report to @SpeedoOT\n`{}".format(
                 output_file_name.content.decode("UTF-8")
             )
         )

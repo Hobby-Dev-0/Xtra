@@ -1,6 +1,6 @@
 # Copyright (C) 2020-2021 by DevsExpo@Github, < https://github.com/DevsExpo >.
 #
-# This file is part of < https://github.com/DevsExpo/FridayUserBot > project,
+# This file is part of < https://github.com/DevsExpo/SpeedoUserBot > project,
 # and is released under the "GNU v3.0 License Agreement".
 # Please see < https://github.com/DevsExpo/blob/master/LICENSE >
 #
@@ -11,7 +11,7 @@ import os
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from main_startup.core.decorators import speedo_on_cmd
 from main_startup.helper_func.basic_helpers import edit_or_reply, get_text
-from main_startup import Friday
+from main_startup import Speedo
 from main_startup.config_var import Config
 from xtraplugins.dB.mail_tools import (
     add_mail_update_mail,
@@ -277,18 +277,18 @@ async def track_mails():
         if len(last) > 1024:
             file_names = "email.text"
             open(file_names, "w").write(last)
-            await Friday.send_document(Config.LOG_GRP, file_names, caption = "Your Mail")
+            await Speedo.send_document(Config.LOG_GRP, file_names, caption = "Your Mail")
             os.remove(file_names)
         else:
-            await Friday.send_message(
+            await Speedo.send_message(
                 Config.LOG_GRP, last)
     elif len(last) > 1024:
-        await Friday.send_document(Config.LOG_GRP, fl_name, caption = "Your Mail Attachment")
-        await Friday.send_document(Config.LOG_GRP, file_names, caption = "Your Mail")
+        await Speedo.send_document(Config.LOG_GRP, fl_name, caption = "Your Mail Attachment")
+        await Speedo.send_document(Config.LOG_GRP, file_names, caption = "Your Mail")
         os.remove(fl_name)
         os.remove(file_names)
     else:
-        await Friday.send_document(Config.LOG_GRP, fl_name, caption = last)
+        await Speedo.send_document(Config.LOG_GRP, fl_name, caption = last)
         os.remove(fl_name)
 
 scheduler = AsyncIOScheduler()
