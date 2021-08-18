@@ -10,7 +10,7 @@ import asyncio
 import os
 import logging
 from main_startup.config_var import Config
-from main_startup.core.decorators import friday_on_cmd
+from main_startup.core.decorators import speedo_on_cmd
 from main_startup.helper_func.basic_helpers import edit_or_reply, get_text
 from pyrogram.errors import FloodWait
 from xtraplugins.dB.fban_db import (
@@ -22,7 +22,7 @@ from xtraplugins.dB.fban_db import (
 )
 
 
-@friday_on_cmd(
+@speedo_on_cmd(
     ["fadd", "addfed"],
     is_official=False,
     cmd_help={
@@ -58,7 +58,7 @@ async def free_fbans(client, message):
     await uj.edit(f"`Added {f_id} To dB!`")
 
 
-@friday_on_cmd(
+@speedo_on_cmd(
     ["frm", "rmfed"],
     cmd_help={
         "help": "Remove Feds From dB!",
@@ -82,7 +82,7 @@ async def paid_fbans(client, message):
     await uj.edit(f"`Removed {f_id} From dB!`")
 
 
-@friday_on_cmd(
+@speedo_on_cmd(
     ["fban", "fedban"],
     is_official=False,
     cmd_help={
@@ -123,7 +123,7 @@ async def fban_s(client, message):
     good_f_msg = f"**FBANNED** \n**Affected Feds :** `{len(fed_s) - failed_n}` \n**Failed :** `{failed_n}` \n**Total Fed :** `{len(fed_s)}`"
     await uj.edit(good_f_msg)
 
-@friday_on_cmd(
+@speedo_on_cmd(
     ["unfban", "unfedban"],
     is_official=False,
     cmd_help={

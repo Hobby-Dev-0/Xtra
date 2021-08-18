@@ -6,7 +6,7 @@
 #
 # All rights reserved.
 
-from main_startup.core.decorators import friday_on_cmd, Config, listen
+from main_startup.core.decorators import speedo_on_cmd, Config, listen
 from main_startup.helper_func.basic_helpers import edit_or_reply, get_text
 from main_startup import bot
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup

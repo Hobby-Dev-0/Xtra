@@ -6,7 +6,7 @@
 #
 # All rights reserved.
 
-from main_startup.core.decorators import friday_on_cmd
+from main_startup.core.decorators import speedo_on_cmd
 import logging
 from main_startup import bot, Friday, Config
 from main_startup.helper_func.basic_helpers import edit_or_reply, get_text
@@ -16,7 +16,7 @@ from main_startup.helper_func.logger_s import LogIt
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 import logging
 
-@friday_on_cmd(
+@speedo_on_cmd(
     ["scgrp"],
     is_official=False,
     only_if_admin=True,
@@ -36,7 +36,7 @@ async def scgrp(client, message):
     await pablo.edit(f"**Added Chat {message.chat.title} With Id {message.chat.id} To Database. This Group Will Be Closed On 12Am(IST) And Will Opened On 06Am(IST)**")
 
 
-@friday_on_cmd(
+@speedo_on_cmd(
     ["rsgrp"],
     is_official=False,
     only_if_admin=True,

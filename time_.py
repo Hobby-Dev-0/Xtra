@@ -6,13 +6,13 @@
 #
 # All rights reserved.
 
-from main_startup.core.decorators import friday_on_cmd
+from main_startup.core.decorators import speedo_on_cmd
 from main_startup.helper_func.basic_helpers import edit_or_reply, get_text, edit_or_send_as_file
 import calendar
 from datetime import datetime
 
 
-@friday_on_cmd(['time'],
+@speedo_on_cmd(['time'],
                cmd_help={
                    "help": "Check Current Date , Time & Calender.",
                    "example": "{ch}time"

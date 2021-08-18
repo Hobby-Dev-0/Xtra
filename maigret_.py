@@ -6,13 +6,13 @@
 #
 # All rights reserved.
 
-from main_startup.core.decorators import friday_on_cmd
+from main_startup.core.decorators import speedo_on_cmd
 from main_startup.helper_func.basic_helpers import edit_or_reply, get_text, edit_or_send_as_file, get_user, get_text
 import os
 from main_startup.core.startup_helpers import run_cmd
 
 
-@friday_on_cmd(['maigret'],
+@speedo_on_cmd(['maigret'],
                cmd_help={
                 "help": "Get A User's Whole Social Data List By Just A Name",
                 "example": "{ch}maigret spechide"})

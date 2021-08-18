@@ -6,7 +6,7 @@
 #
 # All rights reserved.
 
-from main_startup.core.decorators import friday_on_cmd, listen
+from main_startup.core.decorators import speedo_on_cmd, listen
 from pyrogram import filters
 from main_startup.helper_func.basic_helpers import edit_or_reply, get_text
 from main_startup.config_var import Config
@@ -30,7 +30,7 @@ def _check_rmbg(func):
             await func(client, message)
     return check_rmbg
 
-@friday_on_cmd(
+@speedo_on_cmd(
         ["rmbg"],
         is_official=False,
         cmd_help={

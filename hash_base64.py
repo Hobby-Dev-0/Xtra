@@ -7,7 +7,7 @@
 # All rights reserved.
 
 import base64
-from main_startup.core.decorators import friday_on_cmd
+from main_startup.core.decorators import speedo_on_cmd
 from main_startup.core.startup_helpers import run_cmd
 from main_startup.helper_func.basic_helpers import (
     edit_or_reply,
@@ -31,7 +31,7 @@ def hasher(string_to_hash: str):
     return stark_md5, stark_sha1, stark_sha256, stark_sha512
 
 
-@friday_on_cmd(
+@speedo_on_cmd(
     cmd=["hash_text"],
     cmd_help={"help": "Hash Message", "example": '{ch}hash_text (input)'},
 )
@@ -59,7 +59,7 @@ async def get_trash(client, message):
 
 en = ["en", "encode", "enc"]
 
-@friday_on_cmd(
+@speedo_on_cmd(
     cmd=["base_64"],
     cmd_help={"help": "Encode/Decode Message to base64", "example": '{ch}base_64 (replying to message)'},
 )

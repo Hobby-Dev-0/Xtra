@@ -22,7 +22,7 @@ from pyrogram.errors import FloodWait, MessageNotModified
 import multiprocessing
 import time
 import calendar
-from main_startup.core.decorators import friday_on_cmd
+from main_startup.core.decorators import speedo_on_cmd
 from main_startup.helper_func.basic_helpers import edit_or_reply, get_text, humanbytes, time_formatter, run_in_exc
 from pytgcalls import GroupCallFactory, GroupCallFileAction
 import signal
@@ -39,7 +39,7 @@ from youtubesearchpython import SearchVideos
 s_dict = {}
 GPC = {}
 
-@friday_on_cmd(
+@speedo_on_cmd(
     ["playlist"],
     is_official=False,
     cmd_help={"help": "Get Current Chat Playlist!", "example": "{ch}playlist"},
@@ -100,7 +100,7 @@ async def playout_ended_handler(group_call, filename):
     group_call.song_name = name_
     group_call.input_filename = raw_file
 
-@friday_on_cmd(
+@speedo_on_cmd(
     ["skip_vc"],
     is_official=False,
     cmd_help={"help": "Skip Song in Playlist.", "example": "{ch}skip_vc (key_len)"}
@@ -144,7 +144,7 @@ async def ski_p(client, message):
         return await m_.edit(f"`Skipped : {s_} At Position #{no_t_s}`")
    
                 
-@friday_on_cmd(
+@speedo_on_cmd(
     ["play_vc"],
     is_official=False,
     cmd_help={"help": "Play The Song In VC Directly From Youtube Or Telegram!", "example": "{ch}play_vc (song query)"},
@@ -287,7 +287,7 @@ RD_ = {}
 FFMPEG_PROCESSES = {}
 
 
-@friday_on_cmd(
+@speedo_on_cmd(
     ["pradio"],
     is_official=False,
     cmd_help={"help": "Play Radio.", "example": "{ch}pradio (radio url)"},
@@ -322,7 +322,7 @@ async def radio_s(client, message):
     FFMPEG_PROCESSES[(message.chat.id, client.me.id)] = process
     await s.edit(f"**📻 Playing :** `{radio_url}`")
 
-@friday_on_cmd(
+@speedo_on_cmd(
     ["sradio"],
     is_official=False,
     cmd_help={"help": "Stop Radio.", "example": "{ch}stop_radio"},
@@ -340,7 +340,7 @@ async def stop_radio(client, message):
         process.send_signal(signal.SIGTERM)
 
  
-@friday_on_cmd(
+@speedo_on_cmd(
     ["pause"],
     is_official=False,
     cmd_help={"help": "Pause Currently Playing Song.", "example": "{ch}pause"},
@@ -357,7 +357,7 @@ async def no_song_play(client, message):
     group_call.pause_playout()
     
     
-@friday_on_cmd(
+@speedo_on_cmd(
     ["resume"],
     is_official=False,
     cmd_help={"help": "Resume Paused Song.", "example": "{ch}resume"},
@@ -374,7 +374,7 @@ async def wow_dont_stop_songs(client, message):
     await edit_or_reply(message, f"`▶️ Resumed.`")
         
         
-@friday_on_cmd(
+@speedo_on_cmd(
     ["stopvc"],
     is_official=False,
     cmd_help={"help": "Stop VoiceChat!", "example": "{ch}stopvc"},
@@ -394,7 +394,7 @@ async def kill_vc_(client, message):
     del GPC[(message.chat.id, client.me.id)]
 
 
-@friday_on_cmd(
+@speedo_on_cmd(
     ["rvc"],
     is_official=False,
     cmd_help={"help": "Replay Song In VC!", "example": "{ch}rvc"},
@@ -411,7 +411,7 @@ async def replay(client, message):
     await edit_or_reply(message, f"`Re-Playing : {group_call.input_filename}`")
 
 
-@friday_on_cmd(
+@speedo_on_cmd(
     ["rjvc"],
     is_official=False,
     cmd_help={"help": "Rejoin Voice Chat!", "example": "{ch}rjvc"},
@@ -428,7 +428,7 @@ async def rejoinvcpls(client, message):
     await edit_or_reply(message, f"`Rejoined! - Vc`")
 
 
-@friday_on_cmd(
+@speedo_on_cmd(
     ["leavevc"],
     is_official=False,
     cmd_help={"help": "Leave Voice Call!", "example": "{ch}leavevc"},
@@ -448,7 +448,7 @@ async def leave_vc_test(client, message):
     del GPC[(message.chat.id, client.me.id)]
 
 
-@friday_on_cmd(
+@speedo_on_cmd(
     ["setvolvc"],
     is_official=False,
     cmd_help={

@@ -10,7 +10,7 @@ import aiohttp
 from pyrogram import filters
 from xtraplugins.dB.harem_heckdb import add_chat, is_chat_in_db, rm_chat
 from main_startup.config_var import Config
-from main_startup.core.decorators import friday_on_cmd, listen
+from main_startup.core.decorators import speedo_on_cmd, listen
 from main_startup.helper_func.basic_helpers import (
     edit_or_reply,
     edit_or_send_as_file,
@@ -55,7 +55,7 @@ async def ParseSauce(googleurl):
         results["best_guess"] = best_guess.get_text()
     return results
 
-@friday_on_cmd(
+@speedo_on_cmd(
     ["ahc"],
     cmd_help={
         "help": "Add A Chat To Harem List.",
@@ -71,7 +71,7 @@ async def add_harem_hc(client, message):
     await pablo.edit("`Successfully Added Chat To Harem Watch.`")
 
 
-@friday_on_cmd(
+@speedo_on_cmd(
     ["rmhc"],
     group_only=True,
     cmd_help={"help": "Remove Chat From Harem List.", "example": "{ch}rmhc"},

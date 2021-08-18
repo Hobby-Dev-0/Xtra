@@ -7,12 +7,12 @@
 # All rights reserved.
 
 from anime_downloader.sites import get_anime_class
-from main_startup.core.decorators import friday_on_cmd
+from main_startup.core.decorators import speedo_on_cmd
 from main_startup.helper_func.basic_helpers import edit_or_reply, get_text
 from mal import Anime, AnimeSearch, Manga, MangaSearch
 
 
-@friday_on_cmd(
+@speedo_on_cmd(
     ["anime", "animes"],
     is_official=False,
     cmd_help={
@@ -57,7 +57,7 @@ async def anime(client, message):
     await pablo.edit(NopZ, parse_mode="html")
 
 
-@friday_on_cmd(
+@speedo_on_cmd(
     ["animeinfo", "ainfo"],
     is_official=False,
     cmd_help={
@@ -96,7 +96,7 @@ favorites:- {anime.favorites}</b>
     await pablo.edit(By, parse_mode="html")
 
 
-@friday_on_cmd(
+@speedo_on_cmd(
     ["manga", "mangainfo"],
     is_official=False,
     cmd_help={

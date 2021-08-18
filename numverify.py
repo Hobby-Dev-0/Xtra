@@ -8,7 +8,7 @@
 
 from bs4 import BeautifulSoup
 from main_startup.config_var import Config
-from main_startup.core.decorators import friday_on_cmd
+from main_startup.core.decorators import speedo_on_cmd
 from main_startup.core.startup_helpers import run_cmd
 from main_startup.helper_func.basic_helpers import edit_or_reply, get_text
 from hashlib import md5
@@ -28,7 +28,7 @@ async def phone_info(phone_number: int):
           info = await resp.json()
   return info
   
-@friday_on_cmd(
+@speedo_on_cmd(
     ["phone"],
     cmd_help={
         "help": "Get Basic Details About A Phone Number.",

@@ -8,11 +8,11 @@
 
 
 import requests
-from main_startup.core.decorators import friday_on_cmd
+from main_startup.core.decorators import speedo_on_cmd
 from main_startup.helper_func.basic_helpers import edit_or_reply, get_text, edit_or_send_as_file, get_user
 
 
-@friday_on_cmd(['ifsc', 'ifsc_lookup'],
+@speedo_on_cmd(['ifsc', 'ifsc_lookup'],
                cmd_help={
                 'help': 'Get ifsc Code Info.',
                 'example': '{ch}ifsc SBIN0008658'})

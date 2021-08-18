@@ -7,11 +7,11 @@
 # All rights reserved.
 
 import wikipedia
-from main_startup.core.decorators import friday_on_cmd
+from main_startup.core.decorators import speedo_on_cmd
 from main_startup.helper_func.basic_helpers import edit_or_reply, get_text
 
 
-@friday_on_cmd(
+@speedo_on_cmd(
     ["wiki", "wikipedia"],
     is_official=False,
     cmd_help={

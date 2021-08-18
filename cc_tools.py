@@ -16,7 +16,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.chrome.options import Options
 from main_startup.config_var import Config
-from main_startup.core.decorators import friday_on_cmd, listen
+from main_startup.core.decorators import speedo_on_cmd, listen
 from main_startup.helper_func.basic_helpers import (
     edit_or_reply,
     edit_or_send_as_file,
@@ -62,7 +62,7 @@ def namso_gen(bin, no_of_result=15):
     driver.quit()
     return s
 
-@friday_on_cmd(
+@speedo_on_cmd(
     ["namsogen"],
     cmd_help={
         "help": "Gen CC From Bin Using Namso-Gen",
@@ -137,7 +137,7 @@ async def check_stripe_key(key_: str):
     else:
         return 200
     
-@friday_on_cmd(
+@speedo_on_cmd(
     ["sk"],
     cmd_help={
         "help": "Check Sk.",

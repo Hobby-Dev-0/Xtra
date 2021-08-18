@@ -1,11 +1,11 @@
 # (C) Copyright - <New-dev0@Github> & <Anonymous_Machinee@Telegram>
 
-from main_startup.core.decorators import friday_on_cmd
+from main_startup.core.decorators import speedo_on_cmd
 from main_startup.helper_func.basic_helpers import edit_or_reply
 from quotefancy import get_quote
 
 
-@friday_on_cmd(
+@speedo_on_cmd(
     ['quotefancy'],
     is_official=False,
     cmd_help={

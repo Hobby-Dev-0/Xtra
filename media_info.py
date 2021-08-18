@@ -4,7 +4,7 @@ All rights Reserved.
 """
 
 from main_startup.config_var import Config
-from main_startup.core.decorators import friday_on_cmd, listen
+from main_startup.core.decorators import speedo_on_cmd, listen
 from main_startup.core.startup_helpers import run_cmd
 from main_startup.helper_func.basic_helpers import edit_or_reply, get_text
 from main_startup.helper_func.logger_s import LogIt
@@ -16,7 +16,7 @@ page_ = telegraph.create_account(short_name="Friday 🇮🇳")
 
 
 
-@friday_on_cmd(['mediainfo', 'mediadata'],
+@speedo_on_cmd(['mediainfo', 'mediadata'],
                cmd_help={
                "help": "Get Full Info Of A Media.",
                "example": "{ch}mediainfo (replying to file)"

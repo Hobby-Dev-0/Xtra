@@ -20,7 +20,7 @@ from main_startup import Config
 import aiohttp
 from bs4 import BeautifulSoup
 from lxml import etree
-from main_startup.core.decorators import friday_on_cmd
+from main_startup.core.decorators import speedo_on_cmd
 from main_startup.core.startup_helpers import run_cmd
 from main_startup.helper_func.basic_helpers import edit_or_reply, get_text, run_in_exc
 
@@ -67,7 +67,7 @@ async def fetch_data(url: str):
         return url, device_name, version, size, rs_date, type_, package_name
 
     
-@friday_on_cmd(
+@speedo_on_cmd(
     ["mrs"],
     cmd_help={
         "help": "`Search MiUi Roms :)`",

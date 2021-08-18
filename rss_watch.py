@@ -6,7 +6,7 @@
 #
 # All rights reserved.
 
-from main_startup.core.decorators import friday_on_cmd
+from main_startup.core.decorators import speedo_on_cmd
 from main_startup.helper_func.basic_helpers import edit_or_reply, get_text
 import feedparser
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
@@ -27,7 +27,7 @@ from xtraplugins.dB.rss_db import (
 
 
 
-@friday_on_cmd(
+@speedo_on_cmd(
     ["add_rss"],
     is_official=False,
     cmd_help={
@@ -62,7 +62,7 @@ async def addrss(client, message):
     await add_rss(message.chat.id, lenk, rss_d.entries[0].link)
     await pablo.edit("Successfully Added Link To RSS Watch")
 
-@friday_on_cmd(
+@speedo_on_cmd(
     ["test_rss"],
     is_official=False,
     cmd_help={
@@ -94,7 +94,7 @@ async def testrss(client, message):
             await client.send_message(message.chat.id, content)
         await pablo.delete()
 
-@friday_on_cmd(
+@speedo_on_cmd(
     ["list_rss"],
     is_official=False,
     cmd_help={
@@ -119,7 +119,7 @@ async def listrss(client, message):
 
 
 
-@friday_on_cmd(
+@speedo_on_cmd(
     ["del_rss"],
     is_official=False,
     cmd_help={
@@ -140,7 +140,7 @@ async def delrss(client, message):
     await del_rss(message.chat.id, lenk)
     await pablo.edit(f"Successfully Removed `{lenk}` From Chat RSS")
 
-@friday_on_cmd(
+@speedo_on_cmd(
     ["del_all_rss", "rm_all_rss"],
     is_official=False,
     cmd_help={

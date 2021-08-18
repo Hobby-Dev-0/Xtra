@@ -13,7 +13,7 @@ from PIL import Image
 from pygments import highlight
 from pygments.lexers import guess_lexer
 from pygments.formatters import HtmlFormatter, JpgImageFormatter
-from main_startup.core.decorators import friday_on_cmd, Config, listen
+from main_startup.core.decorators import speedo_on_cmd, Config, listen
 from main_startup.helper_func.basic_helpers import edit_or_reply, get_text
 from main_startup.core.startup_helpers import run_cmd
 from main_startup import bot
@@ -23,7 +23,7 @@ import pytz
 from pyrogram import filters
 
 
-@friday_on_cmd(['cih'],
+@speedo_on_cmd(['cih'],
              cmd_help={
                "help": "Convert Python Codes To Highlighted Html / Image",
                "example": "{ch}cih (replying to py file)"})

@@ -9,7 +9,7 @@
 import requests
 import os
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
-from main_startup.core.decorators import friday_on_cmd
+from main_startup.core.decorators import speedo_on_cmd
 from main_startup.helper_func.basic_helpers import edit_or_reply, get_text
 from main_startup import Friday
 from main_startup.config_var import Config
@@ -25,7 +25,7 @@ from xtraplugins.dB.mail_tools import (
 supported_domains = ["esiix.com", "1secmail.net", "wwjmp.com", "1secmail.org", "1secmail.com"]
 
 
-@friday_on_cmd(
+@speedo_on_cmd(
         ["add_mail"],
         is_official=False,
         cmd_help={
@@ -54,7 +54,7 @@ async def add_mail_to_db(client, message):
     await pablo.edit(f"`Your Mail ID {mail_id} successfully added to dB`")
 
 
-@friday_on_cmd(
+@speedo_on_cmd(
         ["list_mails"],
         is_official=False,
         cmd_help={
@@ -69,7 +69,7 @@ async def list_mails(client, message):
         cap +=f"`{x}` \n"
     await pablo.edit(cap)
 
-@friday_on_cmd(
+@speedo_on_cmd(
     ["check_mail"],
     is_official=False,
     cmd_help={
@@ -134,7 +134,7 @@ async def check_mail(client, message):
     await pablo.delete()
         
 
-@friday_on_cmd(
+@speedo_on_cmd(
     ["my_mail"],
     is_official=False,
     cmd_help={
@@ -151,7 +151,7 @@ async def my_mail(client, message):
     await pablo.edit(f"Hey Boss, Your Mail ID is : `{email}`")
 
 
-@friday_on_cmd(
+@speedo_on_cmd(
     ["all_mails"],
     is_official=False,
     cmd_help={
@@ -216,7 +216,7 @@ async def all_mails(client, message):
         await pablo.delete()
 
 
-@friday_on_cmd(
+@speedo_on_cmd(
     ["delete_mail"],
     is_official=False,
     cmd_help={

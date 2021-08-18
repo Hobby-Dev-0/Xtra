@@ -13,7 +13,7 @@ import time
 from asyncio import sleep
 from pyrogram.types import ChatPermissions
 import os
-from main_startup.core.decorators import friday_on_cmd
+from main_startup.core.decorators import speedo_on_cmd
 from main_startup.helper_func.basic_helpers import (
     edit_or_reply,
     edit_or_send_as_file,
@@ -37,7 +37,7 @@ def _check_heroku(func):
             await func(client, message, heroku_client)
     return heroku_cli
     
-@friday_on_cmd(
+@speedo_on_cmd(
     ['usage'],
     cmd_help={
         "help": "Check Your App Usage!",

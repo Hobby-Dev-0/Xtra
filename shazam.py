@@ -14,7 +14,7 @@ from main_startup.core.startup_helpers import run_cmd
 import datetime
 import requests
 import time
-from main_startup.core.decorators import friday_on_cmd
+from main_startup.core.decorators import speedo_on_cmd
 from main_startup.helper_func.basic_helpers import edit_or_reply, get_text, humanbytes
 
 async def shazam(file):
@@ -33,14 +33,14 @@ async def shazam(file):
     return image, by, title
 
 async def convert_to_audio(vid_path):
-    stark_cmd = f"ffmpeg -i {vid_path} -map 0:a friday.mp3"
+    stark_cmd = f"ffmpeg -i {vid_path} -map 0:a speedo.mp3"
     await runcmd(stark_cmd)
-    final_warner = "friday.mp3"
+    final_warner = "speedo.mp3"
     if not os.path.exists(final_warner):
         return None
     return final_warner
 
-@friday_on_cmd(
+@speedo_on_cmd(
     ["shazam"],
     cmd_help={
         "help": "Recognize / Discover A Song",

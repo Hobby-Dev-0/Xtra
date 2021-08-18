@@ -13,7 +13,7 @@ import requests
 from bs4 import BeautifulSoup as bs
 import shutil
 from main_startup.config_var import Config
-from main_startup.core.decorators import friday_on_cmd
+from main_startup.core.decorators import speedo_on_cmd
 from main_startup.core.startup_helpers import run_cmd
 from main_startup.helper_func.basic_helpers import edit_or_reply, get_text
 BASE_URL = "https://isubtitles.org"
@@ -65,7 +65,7 @@ async def get_lang(keyword):
                 link.append(f"{BASE_URL}{b.get('href')}")
     return index, language, link
 
-@friday_on_cmd(
+@speedo_on_cmd(
     ["subs", "substitle", "subdl"],
     cmd_help={
         "help": "Get Subtitle Of A Movie.",

@@ -8,13 +8,13 @@
 
 import os
 
-from main_startup.core.decorators import friday_on_cmd
+from main_startup.core.decorators import speedo_on_cmd
 from main_startup.helper_func.basic_helpers import edit_or_reply
 from main_startup.helper_func.plugin_helpers import convert_to_image
 from PIL import Image
 
 
-@friday_on_cmd(
+@speedo_on_cmd(
     ["boycott"],
     is_official=False,
     cmd_help={

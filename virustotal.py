@@ -9,7 +9,7 @@
 import os
 import time
 import requests
-from main_startup.core.decorators import friday_on_cmd, Config
+from main_startup.core.decorators import speedo_on_cmd, Config
 from main_startup.core.startup_helpers import run_cmd
 from main_startup.helper_func.basic_helpers import (
     edit_or_reply,
@@ -19,7 +19,7 @@ from main_startup.helper_func.basic_helpers import (
 )
 vak = Config.V_T_KEY
 
-@friday_on_cmd(['vt', 'scan'],
+@speedo_on_cmd(['vt', 'scan'],
                cmd_help={
                  "help": "Scan A File For Viruses. Needs Api Key From https://virustotal.com",
                  "example": "{ch}vt (Replying to File / Document)"
